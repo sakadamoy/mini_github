@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+	
+	<body>	
+		{{ form_start(formulaire) }}
+			{{ form_widget(formulaire) }}
+			{# <input type="submit" value="Envoyer"/> #}
+		{{ form_end(formulaire) }}
+
+		<br>
+		
+		{% if errorMessage|length > 0 %}
+			{% for message in errorMessage %}
+				<span>{{message}}</span><br>
+			{% endfor %}
+		{% endif %}
+		
+		{% if isCommit %}
+			Commit effectué !
+		{% endif %}
+	</body>
+</html>
